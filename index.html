@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clínica Salud & Bienestar</title>
-  <!-- Configurá tu backend aquí -->
+  <!-- CAMBIAR por la URL real de tu backend -->
   <script>window.API_BASE = "https://TU-BACKEND.onrender.com";</script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
@@ -121,5 +121,9 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  // Carga dinámica (front)
+  const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
