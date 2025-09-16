@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Turnos - Clínica</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>Panel Administrativo</div>
+    </div>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/admin">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card" id="loginSection">
+    <h2>Ingreso</h2>
+    <p>Ingresá la contraseña de administrador.</p>
+    <div class="grid-2">
+      <div>
+        <label for="adminPassword">Contraseña</label>
+        <input type="password" id="adminPassword" placeholder="••••••••">
+      </div>
+      <div style="display:flex; align-items:flex-end">
+        <button id="loginBtn">Entrar</button>
+      </div>
+    </div>
+    <div id="loginFeedback" style="margin-top:10px"></div>
+  </section>
+
+  <section id="adminSection" style="display:none">
+    <div class="grid-2">
+      <div class="card">
+        <h3>Alta de médico/a</h3>
+        <div class="grid-2">
+          <div>
+            <label for="doctorName">Nombre</label>
+            <input type="text" id="doctorName" placeholder="Ej: Dra. López">
+          </div>
+          <div>
+            <label for="doctorSpec">Especialidad</label>
+            <input type="text" id="doctorSpec" placeholder="Ej: Cardiología">
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <label for="doctorInsurers">Obras sociales con las que trabaja</label>
+          <select id="doctorInsurers" multiple size="7">
+            <option>Avalian</option>
+            <option>Jerárquicos</option>
+            <option>Sancor Salud</option>
+            <option>OSDE</option>
+            <option>Swiss Medical</option>
+            <option>Medife</option>
+            <option>Galeno</option>
+          </select>
+          <p style="color:#64748b; font-size:12px; margin-top:6px">Usá Ctrl/Shift para seleccionar varias.</p>
+        </div>
+        <div style="margin-top:10px">
+          <button id="addDoctorBtn">Agregar</button>
+        </div>
+        <div id="addDoctorFeedback" style="margin-top:10px"></div>
+      </div>
+
+      <div class="card">
+        <h3>Generar y cargar disponibilidad</h3>
+        <div class="grid-2">
+          <div>
+            <label for="doctorSelectAdmin">Médico/a</label>
+            <select id="doctorSelectAdmin"></select>
+          </div>
+          <div>
+            <label for="dateAdmin">Fecha</label>
+            <input type="date" id="dateAdmin">
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:10px">
+          <div><label for="fromTime">Desde</label><input type="time" id="fromTime" value="09:00"></div>
+          <div><label for="toTime">Hasta</label><input type="time" id="toTime" value="12:00"></div>
+          <div><label for="intervalMin">Intervalo (min)</label><input type="number" id="intervalMin" value="30" min="5" step="5"></div>
+        </div>
+        <div style="margin-top:10px; display:flex; gap:8px">
+          <button id="generateSlotsBtn" class="secondary">Generar horarios</button>
+          <button id="saveSlotsBtn">Guardar disponibilidad</button>
+        </div>
+        <div id="generatedSlots" class="times-grid" style="margin-top:10px"></div>
+        <div id="saveSlotsFeedback" style="margin-top:10px"></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:16px">
+      <div class="card">
+        <h3>Disponibilidad cargada</h3>
+        <div class="grid-2">
+          <div>
+            <label for="doctorFilterAvail">Médico/a</label>
+            <select id="doctorFilterAvail"></select>
+          </div>
+          <div>
+            <label for="dateFilterAvail">Fecha</label>
+            <input type="date" id="dateFilterAvail">
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <button id="loadAvailBtn">Ver disponibilidad</button>
+        </div>
+        <div id="availList" style="margin-top:10px"></div>
+      </div>
+
+      <div class="card">
+        <h3>Turnos reservados</h3>
+        <div class="grid-2">
+          <div>
+            <label for="doctorFilterBook">Médico/a</label>
+            <select id="doctorFilterBook"></select>
+          </div>
+          <div>
+            <label for="dateFilterBook">Fecha</label>
+            <input type="date" id="dateFilterBook">
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <button id="loadBookingsBtn">Ver turnos</button>
+        </div>
+        <div id="bookingList" style="margin-top:10px"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Clínica — Panel Admin
+</footer>
+
+<script src="/admin.js"></script>
+</body>
+</html>

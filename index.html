@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clínica Salud & Bienestar</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>Clínica Salud & Bienestar</div>
+    </div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#turnos">Turnos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="/admin">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="inicio" class="hero">
+    <div class="hero-card">
+      <span class="badge">Nuestra clínica</span>
+      <h1>Atención integral con calidez humana</h1>
+      <p>
+        Somos un consultorio clínico multidisciplinario con profesionales de distintas especialidades.
+        Nuestro objetivo es brindar una atención cercana, segura y oportuna, con foco en la prevención,
+        el diagnóstico y el tratamiento. Contamos con agenda online para reservar tu turno
+        con facilidad y transparencia.
+      </p>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card">
+          <strong>Equipo médico</strong>
+          <p class="small">Clínica Médica, Pediatría, Cardiología, Ginecología, Nutrición y más.</p>
+        </div>
+        <div class="card">
+          <strong>Compromiso</strong>
+          <p class="small">Calidad, empatía y ética profesional en cada consulta.</p>
+        </div>
+        <div class="card">
+          <strong>Gestión simple</strong>
+          <p class="small">Reservá online; confirmación por email.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1400&auto=format&fit=crop" alt="Consultorio" style="width:100%; border-radius:12px;">
+        <p style="color:#64748b; font-size:14px; margin-top:8px">Instalaciones confortables y seguras.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="turnos">
+    <h2 class="section-title">Sacá tu turno</h2>
+    <div class="card">
+      <div class="grid-3">
+        <div>
+          <label for="specialtySelect">Especialidad</label>
+          <select id="specialtySelect">
+            <option value="">Seleccionar...</option>
+          </select>
+        </div>
+        <div>
+          <label for="doctorSelect">Médico/a</label>
+          <select id="doctorSelect" disabled>
+            <option value="">Seleccioná especialidad</option>
+          </select>
+        </div>
+        <div>
+          <label for="dateInput">Fecha</label>
+          <input type="date" id="dateInput"/>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; display:flex; gap:10px;">
+        <button id="findSlotsBtn">Buscar horarios</button>
+        <button class="secondary" id="clearFiltersBtn">Limpiar</button>
+      </div>
+
+      <div id="slotsContainer" class="times-grid" style="margin-top:14px"></div>
+      <div id="feedback" style="margin-top:10px"></div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2 class="section-title">Contacto</h2>
+    <div class="grid-2">
+      <div class="card">
+        <strong>Dirección</strong>
+        <p>Av. Salud 123, Ciudad</p>
+        <strong>Teléfono</strong>
+        <p>+54 11 5555-1234</p>
+        <strong>Email</strong>
+        <p>turnos@clinica.com</p>
+      </div>
+      <div class="card">
+        <strong>Horarios de atención</strong>
+        <p>Lunes a Viernes: 8:00 a 20:00</p>
+        <p>Sábados: 9:00 a 13:00</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Clínica Salud & Bienestar — Hecho con ❤️
+</footer>
+
+<!-- Modal reserva -->
+<div class="modal" id="bookModal">
+  <div class="modal-card">
+    <h3>Confirmar turno</h3>
+    <p id="modalInfo" style="color:#334155; margin-bottom:8px"></p>
+
+    <div class="grid-2">
+      <div>
+        <label for="patientName">Nombre y Apellido</label>
+        <input type="text" id="patientName" placeholder="Ej: Ana Pérez">
+      </div>
+      <div>
+        <label for="patientEmail">Email</label>
+        <input type="email" id="patientEmail" placeholder="Ej: ana@email.com">
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:10px">
+      <div>
+        <label for="insurerSelect">Obra Social</label>
+        <select id="insurerSelect"></select>
+      </div>
+      <div id="insurerOtherWrap" style="display:none">
+        <label for="insurerOther">Otra (¿cuál?)</label>
+        <input type="text" id="insurerOther" placeholder="Nombre de la obra social">
+      </div>
+    </div>
+
+    <div style="margin-top:10px">
+      <label for="reason">Motivo de consulta</label>
+      <textarea id="reason" placeholder="Ej: control anual, dolor abdominal, revisión de estudios..."></textarea>
+    </div>
+
+    <div style="display:flex; gap:8px; margin-top:12px">
+      <button id="confirmBookingBtn">Confirmar</button>
+      <button class="ghost" id="cancelBookingBtn">Cancelar</button>
+    </div>
+    <div id="modalFeedback" style="margin-top:10px"></div>
+  </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
