@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Turnos - Clínica</title>
   <script>window.API_BASE = "https://TU-BACKEND.onrender.com";</script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
@@ -92,5 +92,7 @@
 
 <footer>© <span id="year"></span> Clínica — Panel Admin</footer>
 <script src="admin.js"></script>
+<script>const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
