@@ -1,12 +1,9 @@
 {
-  "name": "clinic-turnero",
+  "name": "clinica-backend",
   "version": "1.1.0",
-  "description": "Turnero para consultorio clínico (Node.js + Express + SQLite + Nodemailer)",
+  "description": "Backend turnero clínica (Node + Express + SQLite + CORS + Nodemailer)",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "NODE_ENV=development node server.js"
-  },
+  "scripts": { "start": "node server.js" },
   "dependencies": {
     "express": "^4.19.2",
     "sqlite3": "^5.1.7",
