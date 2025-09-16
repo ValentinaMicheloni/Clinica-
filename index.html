@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clínica Salud & Bienestar</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <!-- Configurá tu backend aquí -->
+  <script>window.API_BASE = "https://TU-BACKEND.onrender.com";</script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <header>
@@ -17,7 +19,7 @@
       <a href="#inicio">Inicio</a>
       <a href="#turnos">Turnos</a>
       <a href="#contacto">Contacto</a>
-      <a href="/admin">Admin</a>
+      <a href="admin.html">Admin</a>
     </nav>
   </div>
 </header>
@@ -34,18 +36,9 @@
         con facilidad y transparencia.
       </p>
       <div class="grid-3" style="margin-top:12px">
-        <div class="card">
-          <strong>Equipo médico</strong>
-          <p class="small">Clínica Médica, Pediatría, Cardiología, Ginecología, Nutrición y más.</p>
-        </div>
-        <div class="card">
-          <strong>Compromiso</strong>
-          <p class="small">Calidad, empatía y ética profesional en cada consulta.</p>
-        </div>
-        <div class="card">
-          <strong>Gestión simple</strong>
-          <p class="small">Reservá online; confirmación por email.</p>
-        </div>
+        <div class="card"><strong>Equipo médico</strong><p class="small">Clínica Médica, Pediatría, Cardiología, Ginecología, Nutrición y más.</p></div>
+        <div class="card"><strong>Compromiso</strong><p class="small">Calidad, empatía y ética profesional en cada consulta.</p></div>
+        <div class="card"><strong>Gestión simple</strong><p class="small">Reservá online; confirmación por email.</p></div>
       </div>
     </div>
     <div>
@@ -92,67 +85,41 @@
     <h2 class="section-title">Contacto</h2>
     <div class="grid-2">
       <div class="card">
-        <strong>Dirección</strong>
-        <p>Av. Salud 123, Ciudad</p>
-        <strong>Teléfono</strong>
-        <p>+54 11 5555-1234</p>
-        <strong>Email</strong>
-        <p>turnos@clinica.com</p>
+        <strong>Dirección</strong><p>Av. Salud 123, Ciudad</p>
+        <strong>Teléfono</strong><p>+54 11 5555-1234</p>
+        <strong>Email</strong><p>turnos@clinica.com</p>
       </div>
       <div class="card">
         <strong>Horarios de atención</strong>
-        <p>Lunes a Viernes: 8:00 a 20:00</p>
-        <p>Sábados: 9:00 a 13:00</p>
+        <p>Lunes a Viernes: 8:00 a 20:00</p><p>Sábados: 9:00 a 13:00</p>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
-  © <span id="year"></span> Clínica Salud & Bienestar — Hecho con ❤️
-</footer>
+<footer>© <span id="year"></span> Clínica Salud & Bienestar — Hecho con ❤️</footer>
 
 <!-- Modal reserva -->
 <div class="modal" id="bookModal">
   <div class="modal-card">
     <h3>Confirmar turno</h3>
     <p id="modalInfo" style="color:#334155; margin-bottom:8px"></p>
-
     <div class="grid-2">
-      <div>
-        <label for="patientName">Nombre y Apellido</label>
-        <input type="text" id="patientName" placeholder="Ej: Ana Pérez">
-      </div>
-      <div>
-        <label for="patientEmail">Email</label>
-        <input type="email" id="patientEmail" placeholder="Ej: ana@email.com">
-      </div>
+      <div><label for="patientName">Nombre y Apellido</label><input type="text" id="patientName" placeholder="Ej: Ana Pérez"></div>
+      <div><label for="patientEmail">Email</label><input type="email" id="patientEmail" placeholder="Ej: ana@email.com"></div>
     </div>
-
     <div class="grid-2" style="margin-top:10px">
-      <div>
-        <label for="insurerSelect">Obra Social</label>
-        <select id="insurerSelect"></select>
-      </div>
-      <div id="insurerOtherWrap" style="display:none">
-        <label for="insurerOther">Otra (¿cuál?)</label>
-        <input type="text" id="insurerOther" placeholder="Nombre de la obra social">
-      </div>
+      <div><label for="insurerSelect">Obra Social</label><select id="insurerSelect"></select></div>
+      <div id="insurerOtherWrap" style="display:none"><label for="insurerOther">Otra (¿cuál?)</label><input type="text" id="insurerOther" placeholder="Nombre de la obra social"></div>
     </div>
-
-    <div style="margin-top:10px">
-      <label for="reason">Motivo de consulta</label>
-      <textarea id="reason" placeholder="Ej: control anual, dolor abdominal, revisión de estudios..."></textarea>
-    </div>
-
+    <div style="margin-top:10px"><label for="reason">Motivo de consulta</label><textarea id="reason" placeholder="Ej: control anual, dolor abdominal, revisión de estudios..."></textarea></div>
     <div style="display:flex; gap:8px; margin-top:12px">
-      <button id="confirmBookingBtn">Confirmar</button>
-      <button class="ghost" id="cancelBookingBtn">Cancelar</button>
+      <button id="confirmBookingBtn">Confirmar</button><button class="ghost" id="cancelBookingBtn">Cancelar</button>
     </div>
     <div id="modalFeedback" style="margin-top:10px"></div>
   </div>
 </div>
 
-<script src="/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
